@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "36bcf462feff15c637ebe93d5cd7af1b",
-    "content-hash": "19e701cd8e924aec7e426f29b4a76863",
+    "hash": "354722c970b0475dd737ed8d462f70ba",
+    "content-hash": "41be9b6784773d7721bf5d6155130a1f",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -33,6 +33,50 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "time": "2014-12-30 15:22:37"
+        },
+        {
+            "name": "dschoenbauer/view",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dschoenbauer/view.git",
+                "reference": "1eefc13f6cea241b09b87c054a9de9a9bac8331d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dschoenbauer/view/zipball/1eefc13f6cea241b09b87c054a9de9a9bac8331d",
+                "reference": "1eefc13f6cea241b09b87c054a9de9a9bac8331d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DSchoenbauer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Schoenbauer",
+                    "email": "dschoenbauer@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple view layer",
+            "homepage": "https://github.com/dschoenbauer/view",
+            "keywords": [
+                "view"
+            ],
+            "time": "2016-11-15 21:13:35"
         },
         {
             "name": "nikic/fast-route",
