@@ -1,6 +1,6 @@
 <?php
 
-namespace DSchoenbauer\Klik;
+namespace DSchoenbauer\Klik\Component;
 
 use DSchoenbauer\View\TemplatedView;
 use DSchoenbauer\View\ViewInterface;

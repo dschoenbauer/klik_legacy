@@ -1,7 +1,10 @@
 <?php
 
-namespace DSchoenbauer\Klik;
+namespace DSchoenbauer\Klik\Pages;
 
+use DSchoenbauer\Controller\AbstractController;
+use DSchoenbauer\Klik\Component\Layout;
+use DSchoenbauer\View\TemplatedView;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -17,7 +20,7 @@ class About extends AbstractController {
     }
 
     public function render(Request $request, Response $response) {
-        $content = new \DSchoenbauer\View\TemplatedView('template/about.html');
+        $content = new TemplatedView('template/about.html');
         $response->getBody()->write((new Layout($request, $content->render()))->render($this->getData()));
     }
 

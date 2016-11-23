@@ -1,9 +1,9 @@
 <?php
 
-use DSchoenbauer\Klik\About;
-use DSchoenbauer\Klik\AppDecorator;
-use DSchoenbauer\Klik\Faq;
-use DSchoenbauer\Klik\Home;
+use DSchoenbauer\Controller\AppDecorator;
+use DSchoenbauer\Klik\Pages\About;
+use DSchoenbauer\Klik\Pages\Faq;
+use DSchoenbauer\Klik\Pages\Home;
 use Slim\App;
 
 require './vendor/autoload.php';
