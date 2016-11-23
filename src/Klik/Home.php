@@ -16,12 +16,11 @@ class Home extends AbstractController{
     }
 
     public function render(Request $request, Response $response) {
-        try {
-            $view = new TemplatedView('template\layout.html');
-            $response->getBody()->write($view->render());
-        } catch (\Exception $exc) {
-            echo $exc->getTraceAsString();
-        }
+        $contentTemplate = new TemplatedView('template/home.html');        
+        $layout = new Layout($request);
+        $layout->setHeader($contentTemplate->render());
+        
+        $response->getBody()->write($layout->render($this->getData()));
 
     }
 

@@ -1,11 +1,15 @@
 <?php
 
+use DSchoenbauer\Klik\About;
 use DSchoenbauer\Klik\AppDecorator;
+use DSchoenbauer\Klik\Faq;
 use DSchoenbauer\Klik\Home;
 use Slim\App;
 
 require './vendor/autoload.php';
-
 $app = new AppDecorator(new App);
-$app->accept(new Home());
+$data = json_decode(file_get_contents('data/content.json'),true);
+$app->accept(new Home($data));
+$app->accept(new About($data));
+$app->accept(new Faq($data));
 $app->run();

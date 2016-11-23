@@ -14,6 +14,11 @@ use Slim\Http\Response;
 abstract class AbstractController implements VisitorInterface {
 
     private $_app;
+    private $_data;
+    
+    public function __construct(array $data = []) {
+        $this->setData($data);
+    }
 
     public function visitApp(App $app) {
         $this->setApp($app)->getApp()->map($this->getMethods(),$this->getRoute(), [$this, 'handleRoute']);
@@ -44,4 +49,12 @@ abstract class AbstractController implements VisitorInterface {
         return ['GET'];
     }
 
+    public function getData() {
+        return $this->_data;
+    }
+
+    public function setData($data) {
+        $this->_data = $data;
+        return $this;
+    }
 }
