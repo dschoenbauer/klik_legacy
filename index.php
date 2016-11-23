@@ -1,14 +1,15 @@
 <?php
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
+
+use DSchoenbauer\Klik\About;
+use DSchoenbauer\Klik\AppDecorator;
+use DSchoenbauer\Klik\Faq;
+use DSchoenbauer\Klik\Home;
+use Slim\App;
 
 require './vendor/autoload.php';
-
-$app = new \Slim\App;
-$app->get('/hello/{name}', function (Request $request, Response $response) {
-    $name = $request->getAttribute('name');
-    $response->getBody()->write("Hello, $name");
-
-    return $response;
-});
+$app = new AppDecorator(new App);
+$data = json_decode(file_get_contents('data/content.json'),true);
+$app->accept(new Home($data));
+$app->accept(new About($data));
+$app->accept(new Faq($data));
 $app->run();

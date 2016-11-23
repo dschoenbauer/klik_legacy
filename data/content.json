@@ -1,0 +1,91 @@
+{
+    "project": {
+        "name": "KLiK Photography",
+        "routes": [
+            {
+                "name": "Home",
+                "url": "."
+            },
+            {
+                "name": "Packages",
+                "url": "package"
+            },
+            {
+                "name": "FAQ",
+                "url": "faq"
+            },
+            {
+                "name": "About",
+                "url": "about"
+            }
+        ]
+    },
+    "about": {
+        "contact": "Krystle",
+        "address": {
+            "street": "533 Central Ave ",
+            "city": "Faribault",
+            "state": "MN",
+            "zip": "55021",
+            "google-api":"AIzaSyCz0CP-456jIxMFjce2NZkjUgZdUfDDnpA",
+            "map-url":""
+        },
+        "phone": "507.210.7087",
+        "email":"",
+        "social":{
+            "facebook":"https://www.facebook.com/photosbyklikfoley/"
+        }
+        
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "description": "<p>THANK YOU for choosing KLiK Photography as the place to get your photos taken! We’re excited your here visiting our site!</p><p>We LOVE capturing your special moments & want to have tons of fun doing so! In order to do that we have a few rules in order for us to keep running a sucessful fun business that you will love coming to!</p>",
+        "questions": [
+            {
+                "question": "What do you need down to get started?",
+                "answer": "A deposit ($20 minimum ) will be due at the time of booking your appt. ~Over the phone by card, or stop by the studio to leave cash or check!"
+            },
+            {
+                "question": "What if I miss an appointment?",
+                "answer": "If you do not make it to your appointment to view your photos & do not call/text with 12-24 hour notice there will be a $20 fee added onto your order. Our time is just as valuable as yours!"
+            },
+            {
+                "question": "How long do I have to pick up my photos?",
+                "answer": "KLiK will hold your photos for 30-60 days, but we encourage you to order any prints you want at the time of your viewing session to ensure we have all the files. After 30 days of your viewing session there will be a $10 reorder fee added onto any more prints needed."
+            },
+            {
+                "question": "When will I be able to get my prints?",
+                "answer": "It takes about 2-3 weeks from the time you take your photos until the time you have your prints in your hand. If you choose a package with the printing rights you will get a cd or USB with your images the day of your viewing"
+            },
+            {
+                "question": "What payment methods do you accept?",
+                "answer": "Cash or check prefered. We do accet credit/debit cards but there is a small additional fee. (Our prices are low & credit cards cost a lot of $ for a small business to run )"
+            },
+            {
+                "question": "When do you order your prints?",
+                "answer": "Prints will not be ordered until paid for"
+            },
+            {
+                "question": "Who owns the copyright of the images?",
+                "answer": "KLiK owns the rights to all photos taken & will not use any unrespectfully. If we use any to hang on our walls you will have the option to purchase that print at a discounted rate."
+            },
+            {
+                "question": "How can I get a preview of my photo session?",
+                "answer": "We will post sneak peaks for you on Facebook to share with your family & friends! (Please do not crop out our logo or edit/modify in any way)"
+            },
+            {
+                "question": "Is there an easy way for my friends and family to purchase my photos?",
+                "answer": "We now offer online viewing, if you have family or friends that would also like to purchase any prints you can send them the link & password to your gallery & they can order prints through that"
+            },
+            {
+                "question": "Do you offer photo editing?",
+                "answer": "Editing such as blemish/acne removal, laugh lines etc is available for an additional cost of $5 per person, per photo"
+            },
+            {
+                "question": "Are you willing to shoot outside your studio?",
+                "answer": "$10 added on for an in Faribault, on location, outdoor shoot, to cover the drive time, gas & other factors into the shoot!"
+            }
+
+        ]
+    }
+}

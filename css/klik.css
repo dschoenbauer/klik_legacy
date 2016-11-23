@@ -1,0 +1,22 @@
+.footer {
+}
+
+iframe{
+    width: 100%;
+    height: 500px;
+}
+
+.img-fluid{
+    width: 100% \9;
+    height: auto;
+}
+
+.nav-button{
+    min-width: 250px;
+}
+
+div .item{
+    min-height: 500px;
+    height: 500px;
+    background-position: center;
+}
