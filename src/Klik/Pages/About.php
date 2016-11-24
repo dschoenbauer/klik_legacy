@@ -2,26 +2,29 @@
 
 namespace DSchoenbauer\Klik\Pages;
 
-use DSchoenbauer\Controller\AbstractController;
-use DSchoenbauer\Klik\Component\Layout;
 use DSchoenbauer\View\TemplatedView;
-use Slim\Http\Request;
-use Slim\Http\Response;
 
 /**
  * Description of About
  *
  * @author David
  */
-class About extends AbstractController {
+class About extends KlikController {
 
     public function getRoute() {
         return '/about';
     }
 
-    public function render(Request $request, Response $response) {
+    public function buildPage() {
+        parent::buildPage();
         $content = new TemplatedView('template/about.html');
-        $response->getBody()->write((new Layout($request, $content->render()))->render($this->getData()));
+        $data = array_merge(
+                $this->getData()['about'],
+                $this->getData()['about']['address'],
+                $this->getData()['project']
+                );
+        $this->getLayout()->add('content', $content->render($data));
     }
+
 
 }

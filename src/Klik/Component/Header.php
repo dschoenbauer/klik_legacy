@@ -13,7 +13,6 @@ use Slim\Http\Request;
  */
 class Header implements ViewInterface {
 
-    private $_currentUrl;
     private $_request;
 
     public function __construct(Request $request) {
@@ -25,7 +24,8 @@ class Header implements ViewInterface {
         /* @var $test \Slim\Route */
         $templateView = new TemplatedView();
         $data['project']['menuItems'] = $this->getMenuItems($templateView, $data['project']['routes']);
-        $header = $templateView->setTemplate('template/header.html')->render($data['project']);
+        $renderData = array_merge($data['project'],$data['about']);
+        $header = $templateView->setTemplate('template/header.html')->render($renderData);
 //Menu Items
         return $header;
     }

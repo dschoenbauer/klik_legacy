@@ -1,6 +1,7 @@
 {
     "project": {
         "name": "KLiK Photography",
+        "ga-key": "UA-87907665-1",
         "routes": [
             {
                 "name": "Home",
@@ -27,15 +28,16 @@
             "city": "Faribault",
             "state": "MN",
             "zip": "55021",
-            "google-api":"AIzaSyCz0CP-456jIxMFjce2NZkjUgZdUfDDnpA",
-            "map-url":""
+            "google-api": "AIzaSyCz0CP-456jIxMFjce2NZkjUgZdUfDDnpA",
+            "map-url": ""
         },
-        "phone": "507.210.7087",
-        "email":"",
-        "social":{
-            "facebook":"https://www.facebook.com/photosbyklikfoley/"
+        "title": "UNHEARD OF PROFESSIONAL PRICES!",
+        "description": "Compare the quality, then compare the prices! You'll like what you find! At KLiK Photography, our passion is photography! We love giving a great price to our customers for all their professional photography needs!",
+        "telephone": "507.210.7087",
+        "email": "",
+        "social": {
+            "facebook": "https://www.facebook.com/photosbyklikfoley/"
         }
-        
     },
     "faq": {
         "title": "Frequently Asked Questions",
