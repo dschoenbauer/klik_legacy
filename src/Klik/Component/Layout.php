@@ -5,7 +5,6 @@ namespace DSchoenbauer\Klik\Component;
 use DSchoenbauer\View\TemplatedView;
 use DSchoenbauer\View\ViewInterface;
 use Exception;
-use Slim\Http\Request;
 
 /**
  * Description of Layout
@@ -13,73 +12,42 @@ use Slim\Http\Request;
  * @author David
  */
 class Layout implements ViewInterface {
-    
-    private $_request;
-    private $_header = null;
-    private $_content = null;
-    private $_footer = null;
-    
-    public function __construct(Request $request, $content = null) {
-        $this->setRequest($request)->setContent($content);
-    }
-    
-    public function render(array $data = array(), $layout = 'template/layout.html') {
-        try {
-            $view = new TemplatedView($layout);
 
-            $dataPage = [
-                'header' => $this->getHeader($data),
-                'content' => $this->getContent(),
-                'footer' => $this->getFooter($data)
-            ];
-            return $view->render($dataPage);
+    private $_pageComponents = [];
+    private $_pageTemplate;
+    
+    public function __construct($pageTemplate) {
+        $this->setPageTemplate($pageTemplate);
+    }
+
+    public function render(array $data = array()) {
+        try {
+            $view = new TemplatedView($this->getPageTemplate());
+            return $view->render(array_merge($this->_pageComponents, $data));
         } catch (Exception $exc) {
             echo $exc->getMessage();
         }
     }
-    /**
-     * @return Request
-     */
-    public function getRequest() {
-        return $this->_request;
+
+    public function add($key, $content) {
+        $this->_pageComponents[$key] = $content;
     }
 
-    public function setRequest($request) {
-        $this->_request = $request;
-        return $this;
-    }
-    public function getContent() {
-        return $this->_content;
+    public function getPageComponents() {
+        return $this->_pageComponents;
     }
 
-    public function setContent($content) {
-        $this->_content = $content;
-        return $this;
+    public function getPageTemplate() {
+        return $this->_pageTemplate;
     }
 
-
-    public function getHeader($data) {
-        if(!$this->_header){
-            return (new Header($this->getRequest()))->render($data);
-        }
-        return $this->_header;
-    }
-
-    public function getFooter($data) {
-        if(!$this->_footer){
-            $templateLoader = new TemplatedView();
-            return $templateLoader->setTemplate('template/footer.html')->render($data['project']);
-        }
-        return $this->_footer;
-    }
-
-    public function setHeader($header) {
-        $this->_header = $header;
+    public function setPageComponents($pageComponents) {
+        $this->_pageComponents = $pageComponents;
         return $this;
     }
 
-    public function setFooter($footer) {
-        $this->_footer = $footer;
+    public function setPageTemplate($pageTemplate) {
+        $this->_pageTemplate = $pageTemplate;
         return $this;
     }
 }

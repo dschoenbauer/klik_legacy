@@ -1,27 +1,26 @@
-<?php namespace DSchoenbauer\Klik\Pages;
+<?php
 
-use DSchoenbauer\Controller\AbstractController;
-use DSchoenbauer\Klik\Component\Layout;
+namespace DSchoenbauer\Klik\Pages;
+
 use DSchoenbauer\View\TemplatedView;
-use Slim\Http\Request;
-use Slim\Http\Response;
 
 /**
  * Description of Faq
  *
  * @author David
  */
-class Faq extends AbstractController {
+class Faq extends KlikController {
 
     public function getRoute() {
         return '/faq';
     }
 
-    public function render(Request $request, Response $response) {
+    public function buildPage() {
+        parent::buildPage();
         $content = new TemplatedView('template/frequentlyAskedQuestions.html');
         $data = $this->getData()['faq'];
         $data['questions'] = $this->getQuestions($data['questions']);
-        $response->getBody()->write((new Layout($request, $content->render($data)))->render($this->getData()));
+        $this->getLayout()->add('content', $content->render($data));
     }
 
     public function getQuestions($questions) {
