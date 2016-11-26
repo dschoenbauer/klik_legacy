@@ -19,9 +19,9 @@ class About extends KlikController {
         parent::buildPage();
         $content = new TemplatedView('template/about.html');
         $data = array_merge(
-                $this->getData()['about'],
-                $this->getData()['about']['address'],
-                $this->getData()['project']
+                $this->getData()->get('about'),
+                $this->getData()->get('about.address'),
+                $this->getData()->get('project')
                 );
         $this->getLayout()->add('content', $content->render($data));
     }

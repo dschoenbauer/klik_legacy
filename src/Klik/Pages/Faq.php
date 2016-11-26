@@ -18,8 +18,8 @@ class Faq extends KlikController {
     public function buildPage() {
         parent::buildPage();
         $content = new TemplatedView('template/frequentlyAskedQuestions.html');
-        $data = $this->getData()['faq'];
-        $data['questions'] = $this->getQuestions($data['questions']);
+        $data = $this->getData()->get('faq');
+        $data['questions'] = $this->getQuestions($this->getData()->get('faq.questions',[]));
         $this->getLayout()->add('content', $content->render($data));
     }
 
