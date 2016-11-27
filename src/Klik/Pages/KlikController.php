@@ -36,16 +36,16 @@ abstract class KlikController extends AbstractController {
     }
     
     public function buildPage(){
-        $this->getLayout()->add('title', $this->getData()['project']['name']);
-        $this->getLayout()->add('header', (new Header($this->getRequest()))->render($this->getData()));
-        $this->getLayout()->add('ga', (new GoogleAnalytics())->render($this->getData()['project']));
-        $this->getLayout()->add('footer', (new Footer())->render($this->getData()['project']));
+        $this->getLayout()->add('title', $this->getData()->get('project.name'));
+        $this->getLayout()->add('header', (new Header($this->getRequest()))->render($this->getData()->getData()));
+        $this->getLayout()->add('ga', (new GoogleAnalytics())->render($this->getData()->get('project')));
+        $this->getLayout()->add('footer', (new Footer())->render($this->getData()->get('project')));
     }
 
     public function render(Request $request, Response $response) {
         $this->setRequest($request)->setResponse($response);
         $this->buildPage();
-        $response->getBody()->write($this->getLayout()->render($this->getData()));
+        $response->getBody()->write($this->getLayout()->render($this->getData()->getData()));
     }
 
     public function getRequest() {
