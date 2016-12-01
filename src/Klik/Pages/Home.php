@@ -18,8 +18,7 @@ class Home extends KlikController {
     public function buildPage() {
         parent::buildPage();
         $contentTemplate = new TemplatedView('template/home.html');
-        $this->getLayout()->add('header', $contentTemplate->render());
-        $this->getLayout()->add('content', null);
+        $this->getLayout()->add('content', $contentTemplate->render());
     }
 
 }
